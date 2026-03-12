@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CadetConnect - NCC Information Chatbot</title>
+    <meta name="description"
+        content="Official CadetConnect Chatbot for National Cadet Corps (NCC) - Get information on joining, camps, certificates, and more.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar/Hero Section -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-container">
+                    <img src="https://i.pinimg.com/736x/82/71/7d/82717d0e31312e1e33365cc56eb66c12.jpg"
+                        alt="CadetConnect Logo" id="app-logo">
+                </div>
+                <h1>CadetConnect</h1>
+                <p class="tagline">Empowering the youth of India</p>
+            </div>
+
+            <nav class="info-sections">
+                <div class="info-card" onclick="window.setContext('about')">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About NCC</span>
+                </div>
+                <div class="info-card" onclick="window.setContext('join')">
+                    <i class="fas fa-user-plus"></i>
+                    <span>How to Join</span>
+                </div>
+                <div class="info-card" onclick="window.setContext('certificates')">
+                    <i class="fas fa-certificate"></i>
+                    <span>Certificates</span>
+                </div>
+                <div class="info-card" onclick="window.setContext('camps')">
+                    <i class="fas fa-campground"></i>
+                    <span>Camp Details</span>
+                </div>
+            </nav>
+
+            <div class="footer-note">
+                <p>&copy; 2026 National Cadet Corps</p>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <header class="chat-header">
+                <div class="status-indicator">
+                    <span class="dot"></span>
+                    <span>Assistant Online</span>
+                </div>
+                <div class="header-actions">
+                    <button id="clear-chat" title="Clear Conversation"><i class="fas fa-trash-alt"></i></button>
+                    <button id="toggle-theme" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div id="chat-messages" class="chat-messages">
+                <!-- Messages will appear here -->
+                <div class="message bot-message">
+                    <div class="bubble">
+                        Jai Hind! I am <strong>CadetConnect</strong>, your virtual assistant for the National Cadet
+                        Corps (NCC). How can I assist you today?
+                    </div>
+                </div>
+            </div>
+
+            <div class="suggestions-container" id="suggestions">
+                <button class="suggestion-btn" onclick="sendMessage('What is NCC?')">What is NCC?</button>
+                <button class="suggestion-btn" onclick="sendMessage('How can I join?')">How can I join?</button>
+                <button class="suggestion-btn" onclick="sendMessage('B-Certificate benefits')">B-Certificate
+                    benefits</button>
+                <button class="suggestion-btn" onclick="sendMessage('Types of NCC camps')">NCC Camps</button>
+            </div>
+
+            <form id="chat-form" class="chat-input-container">
+                <input type="text" id="user-input" placeholder="Type your query here..." autocomplete="off">
+                <button type="submit" id="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
